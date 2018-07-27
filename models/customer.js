@@ -1,12 +1,13 @@
 var mongoose = require('mongoose');
 const validator = require('validator');
+// const autoIncrement = require('mongoose-auto-increment');
 
 var Customer = mongoose.model('Customer', {
-    // CustomerID: {
-    //     type: Number,
-    //     required: true,
-    //     unique: true,
-    // },
+    CustomerID: {
+        type: String,
+        required: true,
+        unique: true,
+    },
     FirstName: {
         type: String,
         required: true,
