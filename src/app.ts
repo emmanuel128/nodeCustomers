@@ -9,7 +9,7 @@ import _ from 'lodash';
 import { CustomerModel } from './models';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = +process.env.PORT || 3000;
 const ObjectId = mongoose.Types.ObjectId;
 
 // mongoose.connect(process.env.MONGODB_URI)
@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('Hello World hey!');
+    res.send('Hello there!');
 });
 
 app.get('/api/customers/:id', (req, res) => {
@@ -42,7 +42,7 @@ app.get('/api/customers/:id', (req, res) => {
 });
 
 app.get('/api/customers', async (req, res) => {
-    CustomerModel.find({ FirstName: 'Emmanuel' }, (err, customers) => {
+    CustomerModel.find({}, (err, customers) => {
         if (err) {
             res.status(500).send(err);
             return;
