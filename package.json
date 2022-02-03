@@ -1,21 +1,34 @@
 {
   "name": "node-customers",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/src/app.js",
   "scripts": {
-    "start": "node server/server.js",
+    "compile": "tsc -w",
+    "start": "nodemon app",
+    "lint": "eslint . --ext .ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Emmanuel D. Castro Soto",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "cors": "^2.8.4",
-    "express": "^4.16.3",
-    "lodash": "^4.17.10",
-    "mongodb": "^3.1.1",
-    "mongoose": "^5.2.5",
-    "validator": "^10.4.0"
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "lodash": "^4.17.21",
+    "mongodb": "^4.3.1",
+    "mongoose": "^6.2.0",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/lodash": "^4.14.178",
+    "@types/validator": "^13.7.1",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "eslint": "^8.8.0",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.5.5"
   }
 }

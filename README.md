@@ -15,3 +15,4 @@ npm install
 # start at localhost:3000
 npm start
 ```
+    "start": "tsc && node dist/app.js",
