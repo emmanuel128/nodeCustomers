@@ -2,10 +2,15 @@
   "name": "node-customers",
   "version": "2.0.0",
   "description": "",
-  "main": "dist/src/app.js",
+  "main": "dist/app.js",
+  "engines": {
+    "node": "16.13.2"
+  },
   "scripts": {
-    "compile": "tsc -w",
-    "start": "nodemon app",
+    "start": "node dist/app.js",
+    "postinstall": "tsc",
+    "watch-node": "nodemon dist/app.js",
+    "watch-ts": "tsc -w",
     "lint": "eslint . --ext .ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
