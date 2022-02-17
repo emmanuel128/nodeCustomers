@@ -2,7 +2,7 @@
 
 > Simple customer manager backend developed with Node.js, Express and MongoDB.
 
-For a live demo [https://salty-cove-65062.herokuapp.com/api/customers](https://salty-cove-65062.herokuapp.com/api/customers)
+For a live demo [https://nodecustomers.herokuapp.com/api/customers](https://nodecustomers.herokuapp.com/api/customers)
 
 Reference: [Brad Traversy](https://github.com/bradtraversy/vcustomers)
 
@@ -15,4 +15,4 @@ npm install
 # start at localhost:3000
 npm start
 ```
-    "start": "tsc && node dist/app.js",
+<!-- "start": "tsc && node dist/app.js", -->

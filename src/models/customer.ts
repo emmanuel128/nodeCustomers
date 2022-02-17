@@ -2,15 +2,22 @@ import validator from "validator";
 import { Schema, model } from 'mongoose';
 
 interface Customer {
-    CustomerID: string;
+    // CustomerID: string;
     FirstName: string;
+    Initial?: string;
     LastName: string;
     Email: string;
+    Phone: string;
+    Address: string;
+    City: string;
+    State: string;
+    ZipCode: string;
 }
 
 const schema = new Schema<Customer>({
-    CustomerID: { type: String, required: true, unique: true },
+    // CustomerID: { type: String, required: true, unique: true },
     FirstName: { type: String, required: true },
+    Initial: { type: String, required: false, maxlength: 1 },
     LastName: { type: String, required: true },
     Email: {
         type: String, required: true,
@@ -22,37 +29,37 @@ const schema = new Schema<Customer>({
             validator: validator.isEmail,
             message: '{VALUE} is not valid.'
         },
-        Phone: {
-            type: String,
-            required: true,
-            minLength: 10,
-            maxLength: 10,
-        },
-        Address: {
-            type: String,
-            required: true,
-            minLength: 1,
-            maxLength: 50,
-        },
-        City: {
-            type: String,
-            required: true,
-            minLength: 1,
-            maxLength: 20,
-        },
-        State: {
-            type: String,
-            required: true,
-            minLength: 2,
-            maxLength: 2,
-        },
-        ZipCode: {
-            type: String,
-            required: true,
-            minLength: 5,
-            maxLength: 5,
-        },
-    }
+    },
+    Phone: {
+        type: String,
+        required: true,
+        minLength: 10,
+        maxLength: 10,
+    },
+    Address: {
+        type: String,
+        required: true,
+        minLength: 1,
+        maxLength: 50,
+    },
+    City: {
+        type: String,
+        required: true,
+        minLength: 1,
+        maxLength: 20,
+    },
+    State: {
+        type: String,
+        required: true,
+        minLength: 2,
+        maxLength: 2,
+    },
+    ZipCode: {
+        type: String,
+        required: true,
+        minLength: 5,
+        maxLength: 5,
+    },
 });
 
 const CustomerModel = model<Customer>('Customer', schema);
